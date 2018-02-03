@@ -15,7 +15,7 @@ var err_routes = require('./middlewares/error_routes');
 
 var app = express();
 // Set up mongoose connection
-var mongoDB = 'mongodb://micah:ndidi1234@ds255787.mlab.com:55787/local-library';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://micah:ndidi1234@ds255787.mlab.com:55787/local-library';
 mongoose.connect(mongoDB, {
     useMongoClient: true
 });
